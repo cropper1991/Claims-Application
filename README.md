@@ -1,4 +1,4 @@
-# Sample-Claims-Application---Crawford-and-Company
+# Sample Claims Application (Technical Test) - Crawford and Company
 
 Sample Claims Application created for the purpose of a Technical Assessment with Crawford and Company. 
 
