@@ -1,0 +1,25 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login page";
+    ViewData["PageName"] = "LoginView"; //Keep Track of Page Name (used to Enable / Disable certain buttons and links)
+}
+@Html.ValidationSummary(true)
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Claims Portal</h1>
+    <h3>Please login</h3>
+
+<form id="LoginForm" action="" method="post">
+    <div>
+        <label>Username: </label>
+        <input name="Username"></input>
+        <label>Password: </label>
+        <input type="password" name="Password"></input>
+        <input type="submit" value="Login"></input>
+    </div>
+    <div style="color: red;">
+        @Html.ValidationMessage("Username")
+        @Html.ValidationMessage("Password")
+    </div>
+</form>
+</div>

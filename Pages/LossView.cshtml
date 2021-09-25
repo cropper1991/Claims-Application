@@ -1,0 +1,47 @@
+@page
+@using System.Text.Json;
+@model LossViewModel
+@{
+    ViewData["Title"] = "LossView Page";
+    ViewData["PageName"] = "LossView"; //Keep Track of Page Name (used to Enable / Disable certain buttons and links)
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome - @Model.DisplayName</h1>
+    <h3>Loss Types</h3>
+</div>
+
+@if (Model.LossTypes != null) //Generate Loss Types Table if we've managed to Retrieve Data
+{
+    <table border="1" style="width:100%;">
+        <tr>
+            <td style="width:20%;">
+                Loss Type ID
+            </td>
+            <td style="width:20%;">
+                Loss Type Code
+            </td>
+            <td style="width:60%;">
+                Loss Type Description
+            </td>
+        </tr>
+
+
+        @foreach (var item in Model.LossTypes)
+        {
+            <tr>
+                <td style="width:20%;">
+                    @Html.DisplayFor(modelItem => item.LossTypeID)
+                </td>
+                <td style="width:20%;">
+                    @Html.DisplayFor(modelItem => item.LossTypeCode)
+                </td>
+                <td style="width:60%;">
+                    @Html.DisplayFor(modelItem => item.LossTypeDescription)
+                </td>
+            </tr>
+        }
+    </table>
+} else {
+    <div style="color:red">Unable to Retrieve Loss Type Data</div>
+}
